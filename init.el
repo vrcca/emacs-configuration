@@ -17,18 +17,19 @@
 (setq uniquify-buffer-name-style 'forward) ;; prepends path to filename in repeated buffer
 (global-set-key (kbd "C-x C-b") 'ibuffer) ;; opens ibuffer instead
 (show-paren-mode 1) ;; highlights matching parenthesis
+(setq-default indent-tabs-mode nil)
 (setq save-interprogram-paste-before-kill t
-        apropos-do-all t
-        mouse-yank-at-point t
-        require-final-newline t
-        visible-bell t
-        load-prefer-newer t
-	inhibit-startup-screen t
-        ediff-window-setup-function 'ediff-setup-windows-plain
-	savehist-file (concat user-emacs-directory "savehist")
-        save-place-file (concat user-emacs-directory "places")
-        backup-directory-alist `(("." . ,(concat user-emacs-directory
-                                                 "backups"))))
+      apropos-do-all t
+      mouse-yank-at-point t
+      require-final-newline t
+      visible-bell t
+      load-prefer-newer t
+      inhibit-startup-screen t
+      ediff-window-setup-function 'ediff-setup-windows-plain
+      savehist-file (concat user-emacs-directory "savehist")
+      save-place-file (concat user-emacs-directory "places")
+      backup-directory-alist `(("." . ,(concat user-emacs-directory
+                                               "backups"))))
 
 ;; PACKAGE CONFIGURATIONS
 ;; clojure hooks
