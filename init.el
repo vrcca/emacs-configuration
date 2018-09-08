@@ -15,6 +15,9 @@
 ;; saves the buffer history
 (savehist-mode t) ;; saves the buffer history
 (setq savehist-file "~/.emacs.d/savehist") ;; this is gitignored
+(add-hook 'after-init-hook 'global-company-mode) ;; enables autocomplete
+(setq backup-directory-alist '(("." . "~/.emacs.d/backup")))
+
 
 ;; PACKAGE CONFIGURATIONS
 ;; clojure hooks
@@ -31,6 +34,7 @@
 (setq ido-enable-flex-matching 1)
 (setq ido-use-faces nil)
 (ido-ubiquitous-mode 1)
+(ido-vertical-mode 1)
 
 ;; neotree
 (global-set-key [f8] 'neotree-toggle)

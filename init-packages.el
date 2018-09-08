@@ -14,16 +14,18 @@
 	dimmer
 	rainbow-delimiters
 	projectile
-	flx-ido
 	clojure-mode
 	cider
+	aggressive-indent
 	elixir-mode
 	alchemist
 	smartparens
 	solarized-theme
-	aggressive-indent
 	undo-tree
-	ido-completing-read+))
+	flx-ido
+	ido-completing-read+
+	ido-vertical-mode
+	company))
 
 (package-initialize)
 
