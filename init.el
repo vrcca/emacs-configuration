@@ -3,7 +3,9 @@
 
 ;; CUSTOM TWEAKS
 (global-undo-tree-mode)
-(add-to-list 'exec-path "/usr/local/bin") ;; adds executables to execution-path
+;; loads $PATH into emacs
+(when (memq window-system '(mac ns x))
+  (exec-path-from-shell-initialize))
 (tool-bar-mode -1) ;; removes toolbar
 (global-display-line-numbers-mode +1)
 (setq inhibit-startup-screen t) ;; disables startup tutorial

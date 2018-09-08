@@ -8,7 +8,8 @@
 
 ;; All packages in this lists are automatically installed on startup
 (setq package-list
-      '(multiple-cursors
+      '(exec-path-from-shell
+	multiple-cursors
 	neotree
 	dimmer
 	rainbow-delimiters
@@ -17,6 +18,7 @@
 	clojure-mode
 	cider
 	elixir-mode
+	alchemist
 	smartparens
 	solarized-theme
 	aggressive-indent
