@@ -32,12 +32,11 @@
                                                "backups"))))
 
 ;; PACKAGE CONFIGURATIONS
+;; default hooks
+(add-hook 'prog-mode-hook #'smartparens-mode)
+(add-hook 'prog-mode-hook #'aggressive-indent-mode)
 ;; clojure hooks
-(add-hook 'clojure-mode-hook #'smartparens-strict-mode)
 (add-hook 'clojure-mode-hook #'rainbow-delimiters-mode)
-(add-hook 'clojure-mode-hook #'aggressive-indent-mode)
-;; elixir hooks
-(add-hook 'elixir-mode-hook #'smartparens-mode)
 
 ;; ido configurations
 (ido-mode 1)
