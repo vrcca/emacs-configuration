@@ -6,17 +6,22 @@
   (when (< emacs-major-version 24)
     (add-to-list 'package-archives '("gnu" . (concat proto "://elpa.gnu.org/packages/")))))
 
+;; All packages in this lists are automatically installed on startup
 (setq package-list
       '(multiple-cursors
 	neotree
 	dimmer
-	rainbow-delimiters))
+	rainbow-delimiters
+	projectile
+	flx-ido))
 
 (package-initialize)
 
+;; Refreshes package cache
 (unless package-archive-contents
   (package-refresh-contents))
 
+;; Automatically install new packages
 (dolist (package package-list)
   (unless (package-installed-p package)
     (package-install package)))
