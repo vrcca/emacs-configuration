@@ -13,7 +13,9 @@
 	dimmer
 	rainbow-delimiters
 	projectile
-	flx-ido))
+	flx-ido
+	clojure-mode
+	cider))
 
 (package-initialize)
 

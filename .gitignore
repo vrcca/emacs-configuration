@@ -84,3 +84,5 @@ projectile*
 
 # Removes multiple-cursors cache
 .mc-lists.el
+
+ido.last
