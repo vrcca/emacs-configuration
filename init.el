@@ -17,7 +17,7 @@
 (setq savehist-file "~/.emacs.d/savehist") ;; this is gitignored
 (add-hook 'after-init-hook 'global-company-mode) ;; enables autocomplete
 (setq backup-directory-alist '(("." . "~/.emacs.d/backup")))
-
+(desktop-save-mode 1) ;; automatically reloads last session
 
 ;; PACKAGE CONFIGURATIONS
 ;; clojure hooks
