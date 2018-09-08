@@ -6,7 +6,13 @@
 (tool-bar-mode -1) ;; removes toolbar
 (setq inhibit-startup-screen t) ;; disables startup tutorial
 (dimmer-mode +1) ;; visually highlight the selected buffer
-(require 'smartparens-config) ;; automatically closes code regions and others
+(load-theme 'zenburn t) ;; Theme
+(require 'smartparens-config)
+
+;; clojure hooks
+(add-hook 'clojure-mode-hook #'smartparens-strict-mode)
+(add-hook 'clojure-mode-hook #'rainbow-delimiters-mode)
+(add-hook 'clojure-mode-hook #'aggressive-indent-mode)
 
 ;; ido configurations
 (require 'flx-ido)

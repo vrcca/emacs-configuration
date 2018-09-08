@@ -17,7 +17,9 @@
 	clojure-mode
 	cider
 	elixir-mode
-	smartparens-mode))
+	smartparens
+	zenburn-theme
+	aggressive-indent))
 
 (package-initialize)
 
