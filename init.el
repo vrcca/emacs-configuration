@@ -6,7 +6,8 @@
 (load "~/.emacs.d/init-packages")
 
 ;; custom tweaks
-(tool-bar-mode -1)
+(tool-bar-mode -1) ;; removes toolbar
+(setq inhibit-startup-screen t) ;; disables startup tutorial
 
 ;; neotree
 (global-set-key [f8] 'neotree-toggle)
