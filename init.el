@@ -1,5 +1,5 @@
 ;; loads and install packages
-(load "~/.emacs.d/init-packages")
+(load (concat user-emacs-directory "init-packages"))
 
 ;; CUSTOM TWEAKS
 (global-undo-tree-mode)
@@ -8,16 +8,27 @@
   (exec-path-from-shell-initialize))
 (tool-bar-mode -1) ;; removes toolbar
 (global-display-line-numbers-mode +1)
-(setq inhibit-startup-screen t) ;; disables startup tutorial
 (dimmer-mode +1) ;; visually highlight the selected buffer
 (load-theme 'solarized-light t) ;; Theme
 (require 'smartparens-config) ;; loads smartparens
-;; saves the buffer history
 (savehist-mode t) ;; saves the buffer history
-(setq savehist-file "~/.emacs.d/savehist") ;; this is gitignored
 (add-hook 'after-init-hook 'global-company-mode) ;; enables autocomplete
-(setq backup-directory-alist '(("." . "~/.emacs.d/backup")))
 (desktop-save-mode 1) ;; automatically reloads last session
+(setq uniquify-buffer-name-style 'forward) ;; prepends path to filename in repeated buffer
+(global-set-key (kbd "C-x C-b") 'ibuffer) ;; opens ibuffer instead
+(show-paren-mode 1) ;; highlights matching parenthesis
+(setq save-interprogram-paste-before-kill t
+        apropos-do-all t
+        mouse-yank-at-point t
+        require-final-newline t
+        visible-bell t
+        load-prefer-newer t
+	inhibit-startup-screen t
+        ediff-window-setup-function 'ediff-setup-windows-plain
+	savehist-file (concat user-emacs-directory "savehist")
+        save-place-file (concat user-emacs-directory "places")
+        backup-directory-alist `(("." . ,(concat user-emacs-directory
+                                                 "backups"))))
 
 ;; PACKAGE CONFIGURATIONS
 ;; clojure hooks
