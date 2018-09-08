@@ -15,7 +15,9 @@
 	projectile
 	flx-ido
 	clojure-mode
-	cider))
+	cider
+	elixir-mode
+	smartparens-mode))
 
 (package-initialize)
 

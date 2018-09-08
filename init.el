@@ -2,9 +2,11 @@
 (load "~/.emacs.d/init-packages")
 
 ;; custom tweaks
+(add-to-list 'exec-path "/usr/local/bin") ;; adds executables to execution-path
 (tool-bar-mode -1) ;; removes toolbar
 (setq inhibit-startup-screen t) ;; disables startup tutorial
 (dimmer-mode +1) ;; visually highlight the selected buffer
+(require 'smartparens-config) ;; automatically closes code regions and others
 
 ;; ido configurations
 (require 'flx-ido)
