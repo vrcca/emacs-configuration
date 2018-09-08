@@ -2,20 +2,17 @@
 (load "~/.emacs.d/init-packages")
 
 ;; CUSTOM TWEAKS
+(global-undo-tree-mode)
 (add-to-list 'exec-path "/usr/local/bin") ;; adds executables to execution-path
 (tool-bar-mode -1) ;; removes toolbar
+(display-line-numbers-mode)
 (setq inhibit-startup-screen t) ;; disables startup tutorial
 (dimmer-mode +1) ;; visually highlight the selected buffer
-(load-theme 'zenburn t) ;; Theme
+(load-theme 'solarized-light t) ;; Theme
 (require 'smartparens-config) ;; loads smartparens
 ;; saves the buffer history
 (savehist-mode t) ;; saves the buffer history
 (setq savehist-file "~/.emacs.d/savehist") ;; this is gitignored
-;; displays line numbers
-(setq linum-format "%5d | ")
-(defun my-linum-mode-hook ()
-  (linum-mode t))
-(add-hook 'find-file-hook 'my-linum-mode-hook)
 
 ;; PACKAGE CONFIGURATIONS
 ;; clojure hooks

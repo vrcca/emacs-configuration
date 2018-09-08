@@ -18,8 +18,9 @@
 	cider
 	elixir-mode
 	smartparens
-	zenburn-theme
-	aggressive-indent))
+	solarized-theme
+	aggressive-indent
+	undo-tree))
 
 (package-initialize)
 
