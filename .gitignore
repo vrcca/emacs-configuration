@@ -86,3 +86,5 @@ projectile*
 .mc-lists.el
 
 ido.last
+
+savehist

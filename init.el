@@ -1,18 +1,29 @@
 ;; loads and install packages
 (load "~/.emacs.d/init-packages")
 
-;; custom tweaks
+;; CUSTOM TWEAKS
 (add-to-list 'exec-path "/usr/local/bin") ;; adds executables to execution-path
 (tool-bar-mode -1) ;; removes toolbar
 (setq inhibit-startup-screen t) ;; disables startup tutorial
 (dimmer-mode +1) ;; visually highlight the selected buffer
 (load-theme 'zenburn t) ;; Theme
-(require 'smartparens-config)
+(require 'smartparens-config) ;; loads smartparens
+;; saves the buffer history
+(savehist-mode t) ;; saves the buffer history
+(setq savehist-file "~/.emacs.d/savehist") ;; this is gitignored
+;; displays line numbers
+(setq linum-format "%5d | ")
+(defun my-linum-mode-hook ()
+  (linum-mode t))
+(add-hook 'find-file-hook 'my-linum-mode-hook)
 
+;; PACKAGE CONFIGURATIONS
 ;; clojure hooks
 (add-hook 'clojure-mode-hook #'smartparens-strict-mode)
 (add-hook 'clojure-mode-hook #'rainbow-delimiters-mode)
 (add-hook 'clojure-mode-hook #'aggressive-indent-mode)
+;; elixir hooks
+(add-hook 'elixir-mode-hook #'smartparens-mode)
 
 ;; ido configurations
 (require 'flx-ido)
