@@ -20,7 +20,8 @@
 	smartparens
 	solarized-theme
 	aggressive-indent
-	undo-tree))
+	undo-tree
+	ido-completing-read+))
 
 (package-initialize)
 

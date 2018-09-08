@@ -5,7 +5,7 @@
 (global-undo-tree-mode)
 (add-to-list 'exec-path "/usr/local/bin") ;; adds executables to execution-path
 (tool-bar-mode -1) ;; removes toolbar
-(display-line-numbers-mode)
+(global-display-line-numbers-mode +1)
 (setq inhibit-startup-screen t) ;; disables startup tutorial
 (dimmer-mode +1) ;; visually highlight the selected buffer
 (load-theme 'solarized-light t) ;; Theme
@@ -23,12 +23,12 @@
 (add-hook 'elixir-mode-hook #'smartparens-mode)
 
 ;; ido configurations
-(require 'flx-ido)
 (ido-mode 1)
 (ido-everywhere 1)
 (flx-ido-mode 1)
 (setq ido-enable-flex-matching 1)
 (setq ido-use-faces nil)
+(ido-ubiquitous-mode 1)
 
 ;; neotree
 (global-set-key [f8] 'neotree-toggle)
