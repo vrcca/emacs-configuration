@@ -8,6 +8,7 @@
 ;; custom tweaks
 (tool-bar-mode -1) ;; removes toolbar
 (setq inhibit-startup-screen t) ;; disables startup tutorial
+(dimmer-mode) ;; visually highlight the selected buffer
 
 ;; neotree
 (global-set-key [f8] 'neotree-toggle)

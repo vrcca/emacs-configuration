@@ -7,7 +7,10 @@
     (add-to-list 'package-archives '("gnu" . (concat proto "://elpa.gnu.org/packages/")))))
 
 (setq package-list
-      '(multiple-cursors neotree))
+      '(multiple-cursors
+	neotree
+	dimmer
+	rainbow-delimiters))
 
 (package-initialize)
 
