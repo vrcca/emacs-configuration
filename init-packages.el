@@ -12,6 +12,7 @@
 	multiple-cursors
 	neotree
 	dimmer
+        org-bullets
 	rainbow-delimiters
 	projectile
 	clojure-mode

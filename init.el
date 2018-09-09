@@ -70,6 +70,9 @@
           emacs-lisp-mode-hook)
   (add-hook it 'enable-paredit-mode))
 
+;; orgmode hooks
+(add-hook 'org-mode-hook (lambda () (org-bullets-mode 1)))
+
 ;; ido configurations
 (ido-mode 1)
 (ido-everywhere 1)
