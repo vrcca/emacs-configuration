@@ -20,6 +20,7 @@
 	elixir-mode
 	alchemist
 	smartparens
+        paredit
 	solarized-theme
 	undo-tree
 	flx-ido

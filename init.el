@@ -1,22 +1,41 @@
 ;; loads and install packages
 (load (concat user-emacs-directory "init-packages"))
 
-;; CUSTOM TWEAKS
+;; keeps emacs custom-settings in separate file
+(setq custom-file (expand-file-name "custom.el" user-emacs-directory))
+(load custom-file)
+
+;; enables undo tree mode globaly
 (global-undo-tree-mode)
+
+;; removes toolbar
+(tool-bar-mode -1)
+
+;; displays line numbers everywhere
+(global-display-line-numbers-mode +1)
+
+;; fades out inactive buffers
+(dimmer-mode +1)
+
+;; loads preferred theme
+(load-theme 'solarized-light t)
+
+;; enables autocomplete
+(add-hook 'after-init-hook 'global-company-mode)
+
+;; automatically restores last session
+(desktop-save-mode 1)
+
+;; uses ibuffer instead of the default buffer list
+(global-set-key (kbd "C-x C-b") 'ibuffer)
+
+;; CUSTOM TWEAKS
 ;; loads $PATH into emacs
 (when (memq window-system '(mac ns x))
   (exec-path-from-shell-initialize))
-(tool-bar-mode -1) ;; removes toolbar
-(global-display-line-numbers-mode +1)
-(dimmer-mode +1) ;; visually highlight the selected buffer
-(load-theme 'solarized-light t) ;; Theme
 (require 'smartparens-config) ;; loads smartparens
-(savehist-mode t) ;; saves the buffer history
-(add-hook 'after-init-hook 'global-company-mode) ;; enables autocomplete
-(desktop-save-mode 1) ;; automatically reloads last session
-(setq uniquify-buffer-name-style 'forward) ;; prepends path to filename in repeated buffer
-(global-set-key (kbd "C-x C-b") 'ibuffer) ;; opens ibuffer instead
 (show-paren-mode 1) ;; highlights matching parenthesis
+(setq uniquify-buffer-name-style 'forward) ;; prepends path to filename in repeated buffer
 (setq-default indent-tabs-mode nil)
 (setq save-interprogram-paste-before-kill t
       apropos-do-all t
@@ -26,17 +45,30 @@
       load-prefer-newer t
       inhibit-startup-screen t
       ediff-window-setup-function 'ediff-setup-windows-plain
+      savehist-mode t
       savehist-file (concat user-emacs-directory "savehist")
       save-place-file (concat user-emacs-directory "places")
       backup-directory-alist `(("." . ,(concat user-emacs-directory
                                                "backups"))))
 
 ;; PACKAGE CONFIGURATIONS
+;; setup smartparens
+(require 'smartparens-config)
+(--each '(elixir-mode-hook)
+  (add-hook it 'turn-on-smartparens-mode))
+
 ;; default hooks
-(add-hook 'prog-mode-hook #'smartparens-mode)
 (add-hook 'prog-mode-hook #'aggressive-indent-mode)
+(--each '(clojure-mode-hook
+          cider-repl-mode-hook
+          emacs-lisp-mode-hook)
+  (add-hook it 'rainbow-delimiters-mode-enable))
+
 ;; clojure hooks
-(add-hook 'clojure-mode-hook #'rainbow-delimiters-mode)
+(--each '(clojure-mode-hook
+          cider-repl-mode-hook
+          emacs-lisp-mode-hook)
+  (add-hook it 'enable-paredit-mode))
 
 ;; ido configurations
 (ido-mode 1)
@@ -60,6 +92,3 @@
 (global-set-key (kbd "C->") 'mc/mark-next-like-this)
 (global-set-key (kbd "C-<") 'mc/mark-previous-like-this)
 (global-set-key (kbd "C-c C-<") 'mc/mark-all-like-this)
-
-(setq custom-file "~/.emacs.d/custom.el")
-(load custom-file)
