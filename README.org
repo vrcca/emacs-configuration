@@ -1,5 +1,5 @@
-## How to Install
+* How to install
 To install this Emacs configuration follow these steps:
-1. Remove default installation: `rm -rf ~/.emacs.d/`
-2. Download the configurations `git@github.com:vrcca/emacs-configuration.git ~/.emacs.d/`
+1. Remove default installation: ~rm -rf ~/.emacs.d/~
+2. Download the configurations ~git clone git@github.com:vrcca/emacs-configuration.git ~/.emacs.d/~
 3. Open emacs.
