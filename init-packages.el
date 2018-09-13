@@ -12,7 +12,9 @@
 	multiple-cursors
 	neotree
 	dimmer
+        ag
         org-bullets
+        markdown-mode
 	rainbow-delimiters
 	projectile
 	clojure-mode
@@ -27,7 +29,12 @@
 	flx-ido
 	ido-completing-read+
 	ido-vertical-mode
-	company))
+	company
+        ;; project specifics
+        mustache-mode
+        terraform-mode
+        docker-compose-mode
+        ))
 
 (package-initialize)
 

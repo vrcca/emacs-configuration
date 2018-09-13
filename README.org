@@ -1,5 +1,9 @@
+
 * How to install
 To install this Emacs configuration follow these steps:
 1. Remove default installation: ~rm -rf ~/.emacs.d/~
 2. Download the configurations ~git clone git@github.com:vrcca/emacs-configuration.git ~/.emacs.d/~
 3. Open emacs.
+
+* Better Search Tool
+Instead of using grep or ack, you can install [[https://github.com/ggreer/the_silver_searcher#installation][the_silver_searcher (a.k.a. ag)]] for a better experience when searching by text inside files.

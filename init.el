@@ -95,3 +95,8 @@
 (global-set-key (kbd "C->") 'mc/mark-next-like-this)
 (global-set-key (kbd "C-<") 'mc/mark-previous-like-this)
 (global-set-key (kbd "C-c C-<") 'mc/mark-all-like-this)
+
+;; html-mode
+;; loads JSP files with html-mode
+(add-to-list 'auto-mode-alist '("\\.jsp$" . html-mode))
+
