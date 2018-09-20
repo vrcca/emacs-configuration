@@ -72,6 +72,7 @@
 
 ;; orgmode hooks
 (add-hook 'org-mode-hook (lambda () (org-bullets-mode 1)))
+(add-to-list 'auto-mode-alist '("\\.\\(org\\|org_archive\\|txt\\)$" . org-mode))
 
 ;; ido configurations
 (ido-mode 1)
