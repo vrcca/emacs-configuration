@@ -29,6 +29,9 @@
 ;; uses ibuffer instead of the default buffer list
 (global-set-key (kbd "C-x C-b") 'ibuffer)
 
+;; switches windows using Meta + Arrows
+(windmove-default-keybindings 'meta)
+
 ;; CUSTOM TWEAKS
 ;; loads $PATH into emacs
 (when (memq window-system '(mac ns x))
@@ -46,6 +49,8 @@
       inhibit-startup-screen t
       ediff-window-setup-function 'ediff-setup-windows-plain
       savehist-mode t
+      winner-mode t ;; undo/redo window changes with C-c left/right
+      ns-pop-up-frames nil
       savehist-file (concat user-emacs-directory "savehist")
       save-place-file (concat user-emacs-directory "places")
       backup-directory-alist `(("." . ,(concat user-emacs-directory
@@ -53,7 +58,6 @@
 
 ;; PACKAGE CONFIGURATIONS
 ;; setup smartparens
-(require 'smartparens-config)
 (--each '(elixir-mode-hook)
   (add-hook it 'turn-on-smartparens-mode))
 

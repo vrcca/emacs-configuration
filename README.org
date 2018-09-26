@@ -6,4 +6,4 @@ To install this Emacs configuration follow these steps:
 3. Open emacs.
 
 * Better Search Tool
-Instead of using grep or ack, you can install [[https://github.com/ggreer/the_silver_searcher#installation][the_silver_searcher (a.k.a. ag)]] for a better experience when searching by text inside files.
+Instead of using grep or ack, you can install [[https://github.com/BurntSushi/ripgrep][ripgrep]] a better experience when searching by text inside files.

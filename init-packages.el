@@ -12,7 +12,7 @@
 	multiple-cursors
 	neotree
 	dimmer
-        ag
+        rg
         org-bullets
         markdown-mode
 	rainbow-delimiters
