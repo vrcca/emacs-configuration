@@ -32,6 +32,11 @@
 ;; switches windows using Meta + Arrows
 (windmove-default-keybindings 'meta)
 
+;; enables winner-mode
+;; undo/redo window changes with C-c left/right
+(when (fboundp 'winner-mode)
+  (winner-mode 1))
+
 ;; CUSTOM TWEAKS
 ;; loads $PATH into emacs
 (when (memq window-system '(mac ns x))
@@ -49,7 +54,6 @@
       inhibit-startup-screen t
       ediff-window-setup-function 'ediff-setup-windows-plain
       savehist-mode t
-      winner-mode t ;; undo/redo window changes with C-c left/right
       ns-pop-up-frames nil
       savehist-file (concat user-emacs-directory "savehist")
       save-place-file (concat user-emacs-directory "places")
@@ -75,8 +79,11 @@
   (add-hook it 'enable-paredit-mode))
 
 ;; orgmode hooks
-(add-hook 'org-mode-hook (lambda () (org-bullets-mode 1)))
 (add-to-list 'auto-mode-alist '("\\.\\(org\\|org_archive\\|txt\\)$" . org-mode))
+(add-hook 'org-mode-hook #'(lambda ()
+                             (org-bullets-mode) ;; Displays bullet points instead of asterisks
+                             (visual-line-mode) ;; make the lines in the buffer wrap around the edges of the screen.
+                             (org-indent-mode)))  ;; to press C-c q  or fill-paragraph ever again!
 
 ;; ido configurations
 (ido-mode 1)
