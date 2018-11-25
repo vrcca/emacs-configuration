@@ -64,6 +64,8 @@
 ;; setup smartparens
 (--each '(elixir-mode-hook)
   (add-hook it 'turn-on-smartparens-mode))
+(add-hook 'elixir-mode-hook
+          (lambda () (add-hook 'before-save-hook 'elixir-format nil t)))
 
 ;; default hooks
 (add-hook 'prog-mode-hook #'aggressive-indent-mode)
