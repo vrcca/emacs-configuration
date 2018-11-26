@@ -68,7 +68,6 @@
           (lambda () (add-hook 'before-save-hook 'elixir-format nil t)))
 
 ;; default hooks
-(add-hook 'prog-mode-hook #'aggressive-indent-mode)
 (--each '(clojure-mode-hook
           cider-repl-mode-hook
           emacs-lisp-mode-hook)
@@ -86,6 +85,13 @@
                              (org-bullets-mode) ;; Displays bullet points instead of asterisks
                              (visual-line-mode) ;; make the lines in the buffer wrap around the edges of the screen.
                              (org-indent-mode)))  ;; to press C-c q  or fill-paragraph ever again!
+
+;; aggressive indent mode hooks
+(--each '(clojure-mode-hook
+          cider-repl-mode-hook
+          emacs-lisp-mode-hook
+          elixir-mode-hook)
+  (add-hook it 'aggressive-indent-mode))
 
 ;; ido configurations
 (ido-mode 1)
@@ -114,3 +120,6 @@
 ;; loads JSP files with html-mode
 (add-to-list 'auto-mode-alist '("\\.jsp$" . html-mode))
 
+
+;; go-mode
+(add-to-list 'auto-mode-alist '("\\.go\\'" . go-mode))

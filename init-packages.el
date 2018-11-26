@@ -15,21 +15,19 @@
         rg
         org-bullets
         markdown-mode
-	rainbow-delimiters
 	projectile
-	clojure-mode
-	cider
 	aggressive-indent
-	elixir-mode
-	alchemist
 	smartparens
-        paredit
 	solarized-theme
 	undo-tree
 	flx-ido
 	ido-completing-read+
 	ido-vertical-mode
 	company
+        ;; language support
+        elixir-mode   alchemist
+        go-mode       company-go
+	clojure-mode  cider       rainbow-delimiters        paredit
         ;; project specifics
         mustache-mode
         terraform-mode
