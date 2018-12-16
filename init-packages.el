@@ -28,6 +28,7 @@
         elixir-mode   alchemist
         go-mode       company-go
 	clojure-mode  cider       rainbow-delimiters        paredit
+        web-mode
         ;; project specifics
         mustache-mode
         terraform-mode

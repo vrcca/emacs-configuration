@@ -66,6 +66,12 @@
   (add-hook it 'turn-on-smartparens-mode))
 (add-hook 'elixir-mode-hook
           (lambda () (add-hook 'before-save-hook 'elixir-format nil t)))
+(add-hook 'elixir-format-hook (lambda ()
+                                (if (projectile-project-p)
+                                    (setq elixir-format-arguments
+                                          (list "--dot-formatter"
+                                                (concat (locate-dominating-file buffer-file-name ".formatter.exs") ".formatter.exs")))
+                                  (setq elixir-format-arguments nil))))
 
 ;; default hooks
 (--each '(clojure-mode-hook
@@ -89,8 +95,7 @@
 ;; aggressive indent mode hooks
 (--each '(clojure-mode-hook
           cider-repl-mode-hook
-          emacs-lisp-mode-hook
-          elixir-mode-hook)
+          emacs-lisp-mode-hook)
   (add-hook it 'aggressive-indent-mode))
 
 ;; ido configurations
