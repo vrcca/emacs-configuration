@@ -37,6 +37,12 @@
 (when (fboundp 'winner-mode)
   (winner-mode 1))
 
+;; store all backup and autosave files in the tmp dir
+(setq backup-directory-alist
+      `((".*" . ,temporary-file-directory)))
+(setq auto-save-file-name-transforms
+      `((".*" ,temporary-file-directory t)))
+
 ;; CUSTOM TWEAKS
 ;; loads $PATH into emacs
 (when (memq window-system '(mac ns x))
@@ -54,11 +60,7 @@
       inhibit-startup-screen t
       ediff-window-setup-function 'ediff-setup-windows-plain
       savehist-mode t
-      ns-pop-up-frames nil
-      savehist-file (concat user-emacs-directory "savehist")
-      save-place-file (concat user-emacs-directory "places")
-      backup-directory-alist `(("." . ,(concat user-emacs-directory
-                                               "backups"))))
+      ns-pop-up-frames nil)
 
 ;; PACKAGE CONFIGURATIONS
 ;; setup smartparens
