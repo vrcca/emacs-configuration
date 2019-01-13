@@ -19,6 +19,8 @@
 	aggressive-indent
 	smartparens
 	solarized-theme
+        intellij-theme
+        monokai-theme
 	undo-tree
 	flx-ido
 	ido-completing-read+

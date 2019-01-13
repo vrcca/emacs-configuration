@@ -18,7 +18,7 @@
 (dimmer-mode +1)
 
 ;; loads preferred theme
-(load-theme 'solarized-light t)
+(load-theme 'monokai t)
 
 ;; enables autocomplete
 (add-hook 'after-init-hook 'global-company-mode)
