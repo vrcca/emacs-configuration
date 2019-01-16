@@ -35,6 +35,7 @@
         mustache-mode
         terraform-mode
         docker-compose-mode
+        magit
         ))
 
 (package-initialize)
