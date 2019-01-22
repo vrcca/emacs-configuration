@@ -63,24 +63,18 @@
       ns-pop-up-frames nil)
 
 ;; PACKAGE CONFIGURATIONS
-;; setup smartparens
-(--each '(elixir-mode-hook)
-  (add-hook it 'turn-on-smartparens-mode))
-(add-hook 'elixir-mode-hook
-          (lambda () (add-hook 'before-save-hook 'elixir-format nil t)))
-(add-hook 'elixir-format-hook (lambda ()
-                                (if (projectile-project-p)
-                                    (setq elixir-format-arguments
-                                          (list "--dot-formatter"
-                                                (concat (locate-dominating-file buffer-file-name ".formatter.exs") ".formatter.exs")))
-                                  (setq elixir-format-arguments nil))))
-
 ;; default hooks
 (--each '(clojure-mode-hook
           cider-repl-mode-hook
+          elixir-mode-hook
           emacs-lisp-mode-hook)
   (add-hook it 'rainbow-delimiters-mode-enable))
 
+(--each '(clojure-mode-hook
+          cider-repl-mode-hook
+          elixir-mode-hook
+          emacs-lisp-mode-hook)
+  (add-hook it 'whitespace-cleanup-mode))
 ;; clojure hooks
 (--each '(clojure-mode-hook
           cider-repl-mode-hook
@@ -136,10 +130,24 @@
 (global-set-key (kbd "C-<") 'mc/mark-previous-like-this)
 (global-set-key (kbd "C-c C-<") 'mc/mark-all-like-this)
 
-;; html-mode
+;; web-mode
 ;; loads JSP files with html-mode
-(add-to-list 'auto-mode-alist '("\\.jsp$" . html-mode))
-
+(add-to-list 'auto-mode-alist '("\\.jsp$" . web-mode))
 
 ;; go-mode
 (add-to-list 'auto-mode-alist '("\\.go\\'" . go-mode))
+
+;; Elixir hooks
+;; Create a buffer-local hook to run elixir-format on save, only when we enable elixir-mode.
+(add-hook 'elixir-mode-hook
+          (lambda () (add-hook 'before-save-hook 'elixir-format nil t)))
+(add-hook 'elixir-format-hook (lambda ()
+                                (if (projectile-project-p)
+                                    (setq elixir-format-arguments
+                                          (list "--dot-formatter"
+                                                (concat (locate-dominating-file buffer-file-name ".formatter.exs") ".formatter.exs")))
+                                  (setq elixir-format-arguments nil))))
+(add-to-list 'auto-mode-alist '("\\.eex\\'" . web-mode))
+;; setup smartparens
+(--each '(elixir-mode-hook)
+  (add-hook it 'turn-on-smartparens-mode))

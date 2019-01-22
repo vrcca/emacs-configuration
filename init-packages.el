@@ -26,6 +26,7 @@
 	ido-completing-read+
 	ido-vertical-mode
 	company
+        whitespace-cleanup-mode
         ;; language support
         elixir-mode   alchemist
         go-mode       company-go
