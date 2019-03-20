@@ -64,7 +64,11 @@
 
 ;; PACKAGE CONFIGURATIONS
 ;; default hooks
-(add-hook 'prog-mode-hook #'rainbow-delimiters-mode)
+(--each '(clojure-mode-hook
+          cider-repl-mode-hook
+          elixir-mode-hook
+          emacs-lisp-mode-hook)
+  (add-hook it 'rainbow-delimiters-mode-enable))
 
 (--each '(clojure-mode-hook
           cider-repl-mode-hook
