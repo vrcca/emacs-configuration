@@ -19,6 +19,9 @@
 
 ;; loads preferred theme
 (load-theme 'monokai t)
+(dolist (x '((ns-transparent-titlebar . unbound)
+             (ns-appearance . unbound)))
+  (add-to-list 'frameset-filter-alist x))
 
 ;; enables autocomplete
 (add-hook 'after-init-hook 'global-company-mode)
