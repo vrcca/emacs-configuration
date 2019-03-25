@@ -70,6 +70,7 @@
 (--each '(clojure-mode-hook
           cider-repl-mode-hook
           elixir-mode-hook
+          perl-mode-hook
           emacs-lisp-mode-hook)
   (add-hook it 'rainbow-delimiters-mode-enable))
 
