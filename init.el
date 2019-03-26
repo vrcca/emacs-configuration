@@ -19,9 +19,7 @@
 
 ;; loads preferred theme
 (load-theme 'monokai t)
-(dolist (x '((ns-transparent-titlebar . unbound)
-             (ns-appearance . unbound)))
-  (add-to-list 'frameset-filter-alist x))
+(add-to-list 'default-frame-alist '(ns-appearance . dark))
 
 ;; enables autocomplete
 (add-hook 'after-init-hook 'global-company-mode)
@@ -152,6 +150,10 @@
                                                 (concat (locate-dominating-file buffer-file-name ".formatter.exs") ".formatter.exs")))
                                   (setq elixir-format-arguments nil))))
 (add-to-list 'auto-mode-alist '("\\.eex\\'" . web-mode))
+
 ;; setup smartparens
 (--each '(elixir-mode-hook)
   (add-hook it 'turn-on-smartparens-mode))
+
+;; perl-mode
+(add-to-list 'auto-mode-alist '("\\.t\\'" . perl-mode))
