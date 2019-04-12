@@ -157,3 +157,6 @@
 
 ;; perl-mode
 (add-to-list 'auto-mode-alist '("\\.t\\'" . perl-mode))
+
+;; dockerfile-mode
+(add-to-list 'auto-mode-alist '("Dockerfile\\'" . dockerfile-mode))

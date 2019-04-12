@@ -12,7 +12,7 @@
 	multiple-cursors
 	neotree
 	dimmer
-        rg
+        ripgrep
         org-bullets
         markdown-mode
 	projectile
@@ -36,6 +36,8 @@
         mustache-mode
         terraform-mode
         docker-compose-mode
+        dockerfile-mode
+        json-mode
         magit
         ))
 
