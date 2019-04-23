@@ -27,6 +27,7 @@
 	ido-vertical-mode
 	company
         whitespace-cleanup-mode
+        imenu-anywhere
         ;; language support
         elixir-mode   alchemist
         go-mode       company-go

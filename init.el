@@ -62,6 +62,7 @@
       ediff-window-setup-function 'ediff-setup-windows-plain
       savehist-mode t
       ns-pop-up-frames nil)
+(global-set-key (kbd "C-.") 'imenu-anywhere)
 
 ;; PACKAGE CONFIGURATIONS
 ;; default hooks
@@ -138,6 +139,8 @@
 
 ;; go-mode
 (add-to-list 'auto-mode-alist '("\\.go\\'" . go-mode))
+(add-hook 'go-mode-hook (lambda ()
+                          (local-set-key (kbd "C-c C-r") 'go-remove-unused-imports)))
 
 ;; Elixir hooks
 ;; Create a buffer-local hook to run elixir-format on save, only when we enable elixir-mode.
