@@ -63,6 +63,7 @@
       savehist-mode t
       ns-pop-up-frames nil)
 (global-set-key (kbd "C-.") 'imenu-anywhere)
+(defalias 'yes-or-no-p 'y-or-n-p)
 
 ;; PACKAGE CONFIGURATIONS
 ;; default hooks
