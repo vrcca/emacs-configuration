@@ -18,8 +18,9 @@
 (dimmer-mode +1)
 
 ;; loads preferred theme
-(load-theme 'monokai t)
-(add-to-list 'default-frame-alist '(ns-appearance . dark))
+;; (load-theme 'monokai t)
+(load-theme 'solarized-light t)
+(add-to-list 'default-frame-alist '(ns-appearance . light))
 
 ;; enables autocomplete
 (add-hook 'after-init-hook 'global-company-mode)
