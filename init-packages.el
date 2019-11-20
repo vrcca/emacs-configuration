@@ -28,6 +28,7 @@
         whitespace-cleanup-mode
         imenu-anywhere
         ;; language support
+        flycheck
         elixir-mode   alchemist
         go-mode       company-go
 	clojure-mode  cider       rainbow-delimiters        paredit
