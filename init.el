@@ -81,6 +81,8 @@
           elixir-mode-hook
           emacs-lisp-mode-hook)
   (add-hook it 'whitespace-cleanup-mode))
+(add-to-list 'auto-mode-alist '("\\.apib\\'" . apib-mode))
+
 ;; clojure hooks
 (--each '(clojure-mode-hook
           cider-repl-mode-hook
@@ -166,3 +168,6 @@
 
 ;; dockerfile-mode
 (add-to-list 'auto-mode-alist '("Dockerfile\\'" . dockerfile-mode))
+
+;; Ruby Hooks
+(add-hook 'ruby-mode-hook #'rubocopfmt-mode)
