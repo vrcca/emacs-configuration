@@ -106,8 +106,8 @@
 (ido-mode 1)
 (ido-everywhere 1)
 (flx-ido-mode 1)
-(setq ido-enable-flex-matching 1)
-(setq ido-use-faces nil)
+(setq ido-enable-flex-matching 1
+      ido-use-faces nil)
 (ido-ubiquitous-mode 1)
 (ido-vertical-mode 1)
 
@@ -125,6 +125,9 @@
               (neotree-find file-name)))
       (message "Could not find git project root."))))
 (global-set-key [f8] 'neotree-project-dir)
+(setq neo-autorefresh nil
+      neo-smart-open t
+      neo-show-hidden-files t)
 
 ;; projectile
 (projectile-mode +1)
