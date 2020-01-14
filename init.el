@@ -66,6 +66,7 @@
 (global-set-key (kbd "C-.") 'imenu-anywhere)
 (defalias 'yes-or-no-p 'y-or-n-p)
 (global-flycheck-mode 1)
+(global-git-gutter-mode 1)
 
 ;; PACKAGE CONFIGURATIONS
 ;; default hooks

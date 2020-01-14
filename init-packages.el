@@ -41,7 +41,7 @@
         docker-compose-mode
         dockerfile-mode
         json-mode
-        magit
+        magit         git-gutter
         ))
 
 (package-initialize)
