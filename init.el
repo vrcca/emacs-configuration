@@ -19,7 +19,7 @@
 
 ;; loads preferred theme
 ;; (load-theme 'monokai t)
-(load-theme 'solarized-light t)
+(load-theme 'monokai t)
 (add-to-list 'default-frame-alist '(ns-appearance . light))
 
 ;; enables autocomplete
