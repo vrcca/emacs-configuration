@@ -44,7 +44,7 @@
     ("#dc322f" "#cb4b16" "#b58900" "#546E00" "#B4C342" "#00629D" "#2aa198" "#d33682" "#6c71c4")))
  '(package-selected-packages
    (quote
-    (imenu-anywhere alchemist flx-ido projectile neotree multiple-cursors)))
+    (robe imenu-anywhere alchemist flx-ido projectile neotree multiple-cursors)))
  '(pos-tip-background-color "#eee8d5")
  '(pos-tip-foreground-color "#586e75")
  '(smartrep-mode-line-active-bg (solarized-color-blend "#859900" "#eee8d5" 0.2))

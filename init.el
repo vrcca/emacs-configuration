@@ -19,7 +19,8 @@
 
 ;; loads preferred theme
 ;; (load-theme 'monokai t)
-(load-theme 'monokai t)
+;; (load-theme 'monokai t)
+(load-theme 'solarized-light t)
 (add-to-list 'default-frame-alist '(ns-appearance . light))
 
 ;; enables autocomplete
@@ -153,8 +154,8 @@
 
 ;; Elixir hooks
 ;; Create a buffer-local hook to run elixir-format on save, only when we enable elixir-mode.
-(add-hook 'elixir-mode-hook
-          (lambda () (add-hook 'before-save-hook 'elixir-format nil t)))
+(add-hook 'elixir-mode-hook #'(lambda () (add-hook 'before-save-hook 'elixir-format nil t)))
+(add-hook 'elixir-mode-hook #'(lambda () (alchemist-mode)))
 (add-hook 'elixir-format-hook (lambda ()
                                 (if (projectile-project-p)
                                     (setq elixir-format-arguments
@@ -162,6 +163,7 @@
                                                 (concat (locate-dominating-file buffer-file-name ".formatter.exs") ".formatter.exs")))
                                   (setq elixir-format-arguments nil))))
 (add-to-list 'auto-mode-alist '("\\.eex\\'" . web-mode))
+(flycheck-mix-setup)
 
 ;; setup smartparens
 (--each '(elixir-mode-hook)
@@ -175,3 +177,6 @@
 
 ;; Ruby Hooks
 (add-hook 'ruby-mode-hook #'rubocopfmt-mode)
+(add-hook 'ruby-mode-hook 'robe-mode)
+(eval-after-load 'company
+  '(push 'company-robe company-backends))

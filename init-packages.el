@@ -30,8 +30,8 @@
         ;; language support
         apib-mode
         flycheck
-        rspec-mode    rubocopfmt
-        elixir-mode   alchemist
+        rspec-mode    rubocopfmt  robe
+        elixir-mode   alchemist   flycheck-mix
         go-mode       company-go
 	clojure-mode  cider       rainbow-delimiters        paredit
         web-mode
