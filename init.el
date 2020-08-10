@@ -22,6 +22,9 @@
 ;; (load-theme 'monokai t)
 (load-theme 'solarized-light t)
 (add-to-list 'default-frame-alist '(ns-appearance . light))
+;; loads preferred font
+(add-to-list 'default-frame-alist
+             '(font . "JetBrains Mono"))
 
 ;; enables autocomplete
 (add-hook 'after-init-hook 'global-company-mode)
