@@ -18,10 +18,9 @@
 (dimmer-mode +1)
 
 ;; loads preferred theme
-;; (load-theme 'monokai t)
-;; (load-theme 'monokai t)
-(load-theme 'solarized-light t)
-(add-to-list 'default-frame-alist '(ns-appearance . light))
+(load-theme 'monokai t)
+;;(load-theme 'solarized-light t)
+(add-to-list 'default-frame-alist '(ns-appearance . dark))
 ;; loads preferred font
 (add-to-list 'default-frame-alist
              '(font . "JetBrains Mono"))
@@ -183,3 +182,5 @@
 (add-hook 'ruby-mode-hook 'robe-mode)
 (eval-after-load 'company
   '(push 'company-robe company-backends))
+(put 'downcase-region 'disabled nil)
+(put 'upcase-region 'disabled nil)
