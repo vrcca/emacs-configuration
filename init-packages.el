@@ -9,6 +9,7 @@
 ;; All packages in this lists are automatically installed on startup
 (setq package-list
       '(exec-path-from-shell
+        use-package
 	multiple-cursors
 	neotree
 	dimmer
@@ -28,6 +29,7 @@
         whitespace-cleanup-mode
         imenu-anywhere
         ;; language support
+        lsp-mode
         apib-mode
         flycheck
         rspec-mode    rubocopfmt  robe

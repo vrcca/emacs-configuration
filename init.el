@@ -166,6 +166,7 @@
                                   (setq elixir-format-arguments nil))))
 (add-to-list 'auto-mode-alist '("\\.eex\\'" . web-mode))
 (flycheck-mix-setup)
+()
 
 ;; setup smartparens
 (--each '(elixir-mode-hook)
@@ -184,3 +185,14 @@
   '(push 'company-robe company-backends))
 (put 'downcase-region 'disabled nil)
 (put 'upcase-region 'disabled nil)
+
+
+;; NEW CONFIGS USING use-package. THE ONES ABOVE ARE DEPRECATED
+(use-package lsp-mode
+  :commands lsp
+  :ensure t
+  :diminish lsp-mode
+  :hook
+  (elixir-mode . lsp)
+  :init
+  (add-to-list 'exec-path "~/elixir-ls"))
