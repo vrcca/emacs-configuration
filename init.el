@@ -194,5 +194,10 @@
   :diminish lsp-mode
   :hook
   (elixir-mode . lsp)
+  (ruby-mode . lsp)
   :init
-  (add-to-list 'exec-path "~/elixir-ls"))
+  (add-to-list 'exec-path "~/.emacs.d/elixir-ls"))
+(use-package lsp-ui)
+
+(provide 'init)
+;;; init.el ends here

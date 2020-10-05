@@ -29,7 +29,7 @@
         whitespace-cleanup-mode
         imenu-anywhere
         ;; language support
-        lsp-mode
+        lsp-mode      lsp-ui
         apib-mode
         flycheck
         rspec-mode    rubocopfmt  robe
