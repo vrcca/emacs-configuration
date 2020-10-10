@@ -33,7 +33,7 @@
         apib-mode
         flycheck
         rspec-mode    rubocopfmt  robe
-        elixir-mode   alchemist   flycheck-mix
+        elixir-mode   alchemist
         go-mode       company-go
 	clojure-mode  cider       rainbow-delimiters        paredit
         web-mode

@@ -165,8 +165,6 @@
                                                 (concat (locate-dominating-file buffer-file-name ".formatter.exs") ".formatter.exs")))
                                   (setq elixir-format-arguments nil))))
 (add-to-list 'auto-mode-alist '("\\.eex\\'" . web-mode))
-(flycheck-mix-setup)
-()
 
 ;; setup smartparens
 (--each '(elixir-mode-hook)
