@@ -47,6 +47,10 @@ flycheck_*.el
 # directory configuration
 .dir-locals.el
 
+# other
+.lsp-session-v1
+games/
+
 ### macOS ###
 # General
 .DS_Store

@@ -46,7 +46,8 @@
         magit         git-gutter
         ))
 
-(package-initialize)
+(when (< emacs-major-version 27)
+  (package-initialize))
 
 ;; Refreshes package cache
 (unless package-archive-contents
