@@ -186,6 +186,11 @@
 
 
 ;; NEW CONFIGS USING use-package. THE ONES ABOVE ARE DEPRECATED
+(when (not (package-installed-p 'use-package))
+  (package-refresh-contents)
+  (package-install 'use-package))
+
+;; Sets up lsp-mode, this is language server
 (use-package lsp-mode
   :commands lsp
   :ensure t
@@ -195,7 +200,14 @@
   (ruby-mode . lsp)
   :init
   (add-to-list 'exec-path "~/.emacs.d/elixir-ls"))
-(use-package lsp-ui)
+(use-package lsp-ui
+  :ensure t)
+
+;; Only starts a Emacs server if there is none running
+(use-package server
+  :config
+  (unless (server-running-p)
+    (server-start)))
 
 (provide 'init)
 ;;; init.el ends here
