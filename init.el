@@ -6,40 +6,6 @@
 (load custom-file)
 
 ;; =====================================
-;; NEW CONFIGS USING use-package.
-;; =====================================
-(when (not (package-installed-p 'use-package))
-  (package-refresh-contents)
-  (package-install 'use-package))
-
-(use-package neotree
-  :ensure t
-  :init
-  (setq neo-theme (if (display-graphic-p) 'icons 'arrow))
-  :config
-  (use-package all-the-icons
-    :ensure t))
-
-(use-package lsp-mode
-  :commands lsp
-  :ensure t
-  :diminish lsp-mode
-  :hook
-  (elixir-mode . lsp)
-  (ruby-mode . lsp)
-  :init
-  (add-to-list 'exec-path "~/.emacs.d/elixir-ls"))
-
-(use-package lsp-ui
-  :ensure t)
-
-;; Only starts a Emacs server if there is none running
-(use-package server
-  :config
-  (unless (server-running-p)
-    (server-start)))
-
-;; =====================================
 ;; OLD CONFIGS BELOW ARE DEPRECATED
 ;; =====================================
 
@@ -221,6 +187,42 @@
   '(push 'company-robe company-backends))
 (put 'downcase-region 'disabled nil)
 (put 'upcase-region 'disabled nil)
+
+
+;; =====================================
+;; NEW CONFIGS USING use-package.
+;; =====================================
+(when (not (package-installed-p 'use-package))
+  (package-refresh-contents)
+  (package-install 'use-package))
+
+(use-package neotree
+  :ensure t
+  :init
+  (setq neo-theme (if (display-graphic-p) 'icons 'arrow))
+  :config
+  (use-package all-the-icons
+    :ensure t))
+
+(use-package lsp-mode
+  :ensure t
+  :commands lsp
+  :diminish lsp-mode
+  :hook
+  (elixir-mode . lsp)
+  (ruby-mode . lsp)
+  :init
+  (add-to-list 'exec-path "~/.emacs.d/elixir-ls")
+  :config
+  (use-package lsp-ui
+    :ensure t))
+
+;; Only starts a Emacs server if there is none running
+(use-package server
+  :config
+  (unless (server-running-p)
+    (server-start)))
+
 
 (provide 'init)
 ;;; init.el ends here
