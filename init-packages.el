@@ -11,7 +11,6 @@
       '(exec-path-from-shell
         use-package
 	multiple-cursors
-	neotree
 	dimmer
         ripgrep
         org-bullets
