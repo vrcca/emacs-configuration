@@ -224,8 +224,7 @@
     (server-start)))
 
 (use-package magit
-  :ensure t
-  :bind ())
+  :ensure t)
 
 (provide 'init)
 ;;; init.el ends here
