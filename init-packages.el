@@ -41,7 +41,7 @@
         docker-compose-mode
         dockerfile-mode
         json-mode
-        magit         git-gutter
+        git-gutter
         ))
 
 (when (< emacs-major-version 27)

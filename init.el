@@ -223,6 +223,9 @@
   (unless (server-running-p)
     (server-start)))
 
+(use-package magit
+  :ensure t
+  :bind ())
 
 (provide 'init)
 ;;; init.el ends here
