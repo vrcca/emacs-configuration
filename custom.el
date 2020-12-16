@@ -34,6 +34,9 @@
    '("#fdf6e3" "#fdf6e3" "#fdf6e3" "#fdf6e3" "#fdf6e3" "#fdf6e3" "#fdf6e3" "#fdf6e3"))
  '(hl-paren-colors '("#2aa198" "#b58900" "#268bd2" "#6c71c4" "#859900"))
  '(magit-diff-use-overlays nil)
+ '(newsticker-url-list
+   '(("Elixir-lang" "elixir-lang.org/rss" nil nil nil)
+     ("Underjord" "https://underjord.io/feed.xml" nil nil nil)))
  '(nrepl-message-colors
    '("#dc322f" "#cb4b16" "#b58900" "#546E00" "#B4C342" "#00629D" "#2aa198" "#d33682" "#6c71c4"))
  '(package-selected-packages
