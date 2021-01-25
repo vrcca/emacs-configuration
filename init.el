@@ -120,50 +120,11 @@
 (ido-ubiquitous-mode 1)
 (ido-vertical-mode 1)
 
-;; neotree - projectile
-(defun neotree-project-dir ()
-  "Open NeoTree using the git root."
-  (interactive)
-  (let ((project-dir (projectile-project-root))
-        (file-name (buffer-file-name)))
-    (neotree-toggle)
-    (if project-dir
-        (if (neo-global--window-exists-p)
-            (progn
-              (neotree-dir project-dir)
-              (neotree-find file-name)))
-      (message "Could not find git project root."))))
-(global-set-key [f8] 'neotree-project-dir)
-(setq neo-autorefresh nil
-      neo-smart-open t
-      neo-window-width 30
-      neo-create-file-auto-open nil
-      neo-auto-indent-point nil
-      neo-mode-line-type 'none
-      neo-show-updir-line nil
-      neo-theme 'icons
-      neo-banner-message nil
-      neo-show-hidden-files nil
-      neo-keymap-style 'concise
-      neo-show-hidden-files t
-      neo-hidden-regexp-list
-      '(;; vcs folders
-        "^\\.\\(?:git\\|hg\\|svn\\)$"
-        ;; compiled files
-        "\\.\\(?:pyc\\|o\\|elc\\|lock\\|css.map\\|class\\)$"
-        ;; generated files, caches or local pkgs
-        "^\\(?:node_modules\\|vendor\\|.\\(project\\|cask\\|yardoc\\|sass-cache\\)\\)$"
-        ;; org-mode folders
-        "^\\.\\(?:sync\\|export\\|attach\\)$"
-        ;; temp files
-        "~$"
-        "^#.*#$"))
 
 ;; projectile
 (projectile-mode +1)
 (define-key projectile-mode-map (kbd "s-p") 'projectile-command-map)
 (define-key projectile-mode-map (kbd "C-c p") 'projectile-command-map)
-(setq projectile-switch-project-action 'neotree-projectile-action)
 
 ;; multiple-cursors
 (global-set-key (kbd "C-S-c C-S-c") 'mc/edit-lines)
@@ -225,6 +186,44 @@
   :config
   (use-package all-the-icons
     :ensure t))
+(global-set-key [f8] 'neotree-project-dir)
+(defun neotree-project-dir ()
+  "Open NeoTree using the git root."
+  (interactive)
+  (let ((project-dir (projectile-project-root))
+        (file-name (buffer-file-name)))
+    (neotree-toggle)
+    (if project-dir
+        (if (neo-global--window-exists-p)
+            (progn
+              (neotree-dir project-dir)
+              (neotree-find file-name)))
+      (message "Could not find git project root."))))
+(setq neo-autorefresh nil
+      neo-smart-open t
+      neo-window-width 30
+      neo-create-file-auto-open nil
+      neo-auto-indent-point nil
+      neo-mode-line-type 'none
+      neo-show-updir-line nil
+      neo-theme 'icons
+      neo-banner-message nil
+      neo-show-hidden-files nil
+      neo-keymap-style 'concise
+      neo-show-hidden-files t
+      neo-hidden-regexp-list
+      '(;; vcs folders
+        "^\\.\\(?:git\\|hg\\|svn\\)$"
+        ;; compiled files
+        "\\.\\(?:pyc\\|o\\|elc\\|lock\\|css.map\\|class\\)$"
+        ;; generated files, caches or local pkgs
+        "^\\(?:node_modules\\|vendor\\|.\\(project\\|cask\\|yardoc\\|sass-cache\\)\\)$"
+        ;; org-mode folders
+        "^\\.\\(?:sync\\|export\\|attach\\)$"
+        ;; temp files
+        "~$"
+        "^#.*#$"))
+(setq projectile-switch-project-action 'neotree-projectile-action)
 
 (use-package lsp-mode
   :ensure t
